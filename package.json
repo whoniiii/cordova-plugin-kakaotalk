@@ -1,0 +1,27 @@
+{
+  "id": "cordova-plugin-kakaotalk",
+  "name": "cordova-plugin-kakaotalk",
+  "version": "1.0.0",
+  "description": "Cordova KakaoTalk Plugin",
+  "cordova": {
+    "id": "cordova-plugin-kakaotalk",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "keywords": [
+    "cordova",
+    "kakao",
+    "kakaotalk",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "JHLEE",
+  "license": "MIT"
+}
