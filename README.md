@@ -3,7 +3,7 @@ Cordova Plugin KakaoTalk (with CustomURL scheme)
 
 This plugin is modified by combining the two other plguins
 
-- https://github.com/taejaehan/KakaoTalkCordovaPlugin
+- https://github.com/hasbeanthere/cordova-plugin-kakaotalk
 
 Make sure you've registered your Facebook app with Kakao and have an KAKAO_APP_KEY
 
@@ -14,7 +14,7 @@ Make sure you've registered your Facebook app with Kakao and have an KAKAO_APP_K
 Cordova Install Note:
 ========================
 
-cordova plugin add https://github.com/queenyjina/cordova-kakaotalk.git --variable KAKAO_APP_KEY=YOUR_KAKAO_APP_KEY
+cordova plugin add https://github.com/hasbeanthere/cordova-plugin-kakaotalk --variable KAKAO_APP_KEY=YOUR_KAKAO_APP_KEY
 
 [Android]
 * nothing to do ;-)

@@ -53,7 +53,9 @@ public class KakaoTalk extends CordovaPlugin {
 		Log.v(LOG_TAG, "kakao : initialize");
 		super.initialize(cordova, webView);
 		currentActivity = this.cordova.getActivity();
-		KakaoSDK.init(new KakaoSDKAdapter());
+		if(KakaoSDK.getAdapter() == null){
+			KakaoSDK.init(new KakaoSDKAdapter());
+		}
 	}
 
 	/**
@@ -423,41 +425,41 @@ public class KakaoTalk extends CordovaPlugin {
 		public ISessionConfig getSessionConfig() {
 			return new ISessionConfig() {
 				@Override
-				public AuthType[] getAuthTypes() {
-					return new AuthType[] {AuthType.KAKAO_TALK};
-				}
+                public AuthType[] getAuthTypes() {
+                    return new AuthType[] {AuthType.KAKAO_LOGIN_ALL};
+                }
 
-				@Override
-				public boolean isUsingWebviewTimer() {
-					return false;
-				}
+                @Override
+                public boolean isUsingWebviewTimer() {
+                    return false;
+                }
 
-				@Override
-				public ApprovalType getApprovalType() {
-					return ApprovalType.INDIVIDUAL;
-				}
+                @Override
+                public boolean isSecureMode() {
+                    return false;
+                }
 
-				@Override
-				public boolean isSaveFormData() {
-					return true;
-				}
+                @Override
+                public ApprovalType getApprovalType() {
+                    return ApprovalType.INDIVIDUAL;
+                }
+
+                @Override
+                public boolean isSaveFormData() {
+                    return true;
+                }
 			};
 		}
 
 		@Override
-		public IApplicationConfig getApplicationConfig() {
-			return new IApplicationConfig() {
-				@Override
-				public Activity getTopActivity() {
-					return KakaoTalk.getCurrentActivity();
-				}
-
-				@Override
-				public Context getApplicationContext() {
-					return KakaoTalk.getCurrentActivity().getApplicationContext();
-				}
-			};
-		}
+        public IApplicationConfig getApplicationConfig() {
+            return new IApplicationConfig() {
+                @Override
+                public Context getApplicationContext() {
+                    return KakaoTalk.getCurrentActivity().getApplicationContext();
+                }
+            };
+        }
 	}
 
 }
